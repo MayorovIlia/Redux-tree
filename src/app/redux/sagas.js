@@ -31,7 +31,13 @@ function* handleNodeClick({ id, nodes, activeNodes }) {
 }
 
 function* handleAddNodeWithChildren({ id, nodes}) {
-    const childrenNode = yield Api.getNodeChildrenIds(id)
+    let childrenNode = {}
+    if(!nodes.hasOwnProperty(id)){
+        childrenNode = yield Api.getNodeChildrenIds(id)
+    } else {
+        childrenNode['nodes'] = nodes[id]['children']
+    }
+
     const nodeChildren = childrenNode['nodes']
     
     // keep parent node 
