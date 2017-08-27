@@ -1,0 +1,41 @@
+body {
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    margin: 10px;    
+}
+
+span {
+    padding: 2px 2px 2px 20px;    
+    position: relative;
+}
+
+.folder:hover {
+    outline: 1px solid grey;
+    cursor: pointer;
+}
+
+.folder:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: block;
+    background: url('folder.png') no-repeat;
+    position: absolute;
+    left: 0;
+}
+
+.rootFolder:before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    float: left;
+    display: block;
+    background: url('earth.png') no-repeat;
+}
